@@ -1,5 +1,5 @@
 // MAke connection to server
-var socket = io.connect('http://localhost:5500');
+var socket = io.connect('localhost:5500');
 
 //Query DOM
 var message = document.getElementById('message');
@@ -9,14 +9,19 @@ var message = document.getElementById('message');
     feedback = document.getElementById('feedback');
     usercount = document.getElementById('usercount');
     fielderror = document.getElementById('fielderror');
+    time = document.getElementById('time');
+
 //Emit events on click of button
 btn.addEventListener('click', ()=>{
 
+let localTime = new Date();
+let stringTime = localTime.toLocaleTimeString(); 
 
 //Emit the data to be sent
 socket.emit('chat', {
     username: username.value,
-    message: message.value
+    message: message.value,
+    time: stringTime
 });
 });
 
@@ -30,6 +35,7 @@ message.addEventListener('keypress', ()=>{
 socket.on('chat', (data)=>{
     feedback.innerHTML = '';
     output.innerHTML += '<p><strong>' +data.username+ ': </strong>' +data.message+ '</p>';
+    time.innerHTML += '<p><strong>' +data.time+ '</strong>'; 
 });
 
 socket.on('typing', (data)=>{
@@ -41,6 +47,5 @@ socket.on('userCount', (data)=>{
 });
 
 socket.on('exception', (data)=>{
-
     fielderror.innerHTML='<p>'+data.fielderr+'</p>';
 });
