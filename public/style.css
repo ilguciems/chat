@@ -1,8 +1,9 @@
 body{
-    font-family: 'Nunito';
+   background: #fff4cf;
 }
 h1{
     text-align: center;
+    margin-top: 20px;
 }
 
 h2{
@@ -40,7 +41,9 @@ h2{
 
 #usercount{
     text-align: center;
-    color: #575ed8;
+    color: #ececec;
+    padding: 10px;
+    background: rgb(0, 126, 94);
 }
 
 #fielderror{
