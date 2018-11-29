@@ -9,8 +9,8 @@ const app = express();
 app.use(express.static('public'));
 
 //Start server and listen on a port
-var server = app.listen(5000, ()=>{
-    console.log(`Server started on port 5000`);
+var server = app.listen(5500, ()=>{
+    console.log(`Server started on port 5500`);
 });
 
 //use server on port 5000 for SocketIO connections
@@ -41,6 +41,7 @@ io.on('connection', (socket)=>{
 // get data from client and emit it to all clients
     socket.on('chat', (data)=>{
         let username = data.username;
+        let message = data.message;
         if(username==''|| message==''){
             socket.emit('exception', {fielderr: errmsg});
         }else{
