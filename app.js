@@ -13,7 +13,7 @@ var server = app.listen(5500, ()=>{
     console.log(`Server started on port 5500`);
 });
 
-//use server on port 5000 for SocketIO connections
+//use server on port 5500 for SocketIO connections
 const io = socketIO(server);
 
 
