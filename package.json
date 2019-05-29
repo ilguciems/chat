@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node app.js"
   },
-  "author": "Jev",
+  "author": "Jev Belovs",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
