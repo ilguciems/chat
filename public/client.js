@@ -1,7 +1,7 @@
-// MAke connection to server
+// makeke connection to server
 var socket = io.connect('localhost:5500');
 
-//Query DOM
+//query DOM
 var message = document.getElementById('message');
     username = document.getElementById('username');
     output = document.getElementById('output');
@@ -11,13 +11,13 @@ var message = document.getElementById('message');
     fielderror = document.getElementById('fielderror');
     time = document.getElementById('time');
 
-//Emit events on click of button
+//emit events on click of button
 btn.addEventListener('click', ()=>{
 
 let localTime = new Date();
 let stringTime = localTime.toLocaleTimeString(); 
 
-//Emit the data to be sent
+//emit the data to be sent
 socket.emit('chat', {
     username: username.value,
     message: message.value,
@@ -25,13 +25,13 @@ socket.emit('chat', {
 });
 });
 
-//?Add "USER is Typing" on Keypress event
+//add "USER is Typing" on keypress event
 
 message.addEventListener('keypress', ()=>{
     socket.emit('typing', username.value);
 })
 
-//Display data in empty div on that event
+//display data in empty div on that event
 socket.on('chat', (data)=>{
     feedback.innerHTML = '';
     output.innerHTML += '<p><strong>' +data.username+ ': </strong>' +data.message+ '</p>';
