@@ -1,4 +1,4 @@
-// Require Library
+// require library
 const express = require('express');
 const socketIO = require('socket.io');
 
@@ -6,10 +6,10 @@ const socketIO = require('socket.io');
 const app = express();
 const port = process.env.PORT || 5500;
 
-// Serve static files in public folder
+// serve static files in public folder
 app.use(express.static('public'));
 
-//Start server and listen on a port
+//start server and listen on a port
 var server = app.listen(port, ()=>{
     console.log(`Server started on port ${port}`);
 });
