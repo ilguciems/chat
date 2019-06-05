@@ -5,12 +5,16 @@
   "description": "This is my chat app",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "author": "Jev Belovs",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
     "socket.io": "^2.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }
