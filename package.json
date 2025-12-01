@@ -11,8 +11,8 @@
   "author": "Jev Belovs",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
-    "socket.io": "^2.5.0"
+    "express": "^4.22.1",
+    "socket.io": "^4.8.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
